@@ -8,6 +8,10 @@
   transform: all 200ms ease-in-out;
 }
 
+.dark body {
+  background: #141414;
+}
+
 .list-item {
   display: flex;
   flex-wrap: wrap;
