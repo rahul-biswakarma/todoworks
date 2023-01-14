@@ -1,13 +1,122 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Anybody", cursive;
+  /* font-family: "Montserrat", sans-serif; */
+  transform: all 200ms ease-in-out;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.list-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  gap: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.icons-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.todo-tag,
+.done-tag,
+.task-tag,
+.in-progress-tag {
+  width: max-content;
+  font-family: monospace;
+  width: max-content;
+  background: #d7e2fe;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  color: #2c51ad;
+  border: 2px solid #d7e2fe;
+  cursor: pointer;
+  text-transform: lowercase;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+}
+
+.dark .todo-tag {
+  background: #2d3a51;
+  border-color: #2d3a51;
+  color: #acc2fa;
+}
+
+.todo-tag:hover {
+  border-color: #6585d8;
+}
+
+.in-progress-tag {
+  background: #ffe1be;
+  border-color: #ffe1be;
+  color: #a9661a;
+}
+
+.dark .in-progress-tag {
+  background: #6b573d;
+  border-color: #6b573d;
+  color: #fbbe79;
+}
+
+.in-progress-tag:hover {
+  border-color: #db994e;
+}
+
+.task-tag {
+  background: #ffbee5;
+  border-color: #ffbee5;
+  color: #e81393;
+}
+
+.dark .task-tag {
+  background: #6d4773;
+  border-color: #6d4773;
+  color: #f791ce;
+}
+
+.task-tag:hover {
+  border-color: #c03b8b;
+}
+
+.done-tag {
+  background: #d7f3e3;
+  border-color: #d7f3e3;
+  color: #217947;
+}
+
+.dark .done-tag {
+  background: #205843;
+  border-color: #205843;
+  color: #95ffc3;
+}
+
+.done-tag:hover {
+  border-color: #217947;
+}
+
+.tags-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  font-weight: 500;
+  transition: all 300ms ease-in-out;
+  padding: 5rem;
 }
