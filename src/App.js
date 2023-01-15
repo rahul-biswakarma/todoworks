@@ -37,9 +37,12 @@ const App = () => {
   }, [todos]);
 
   return (
-    <div className="w-full h-[100vh] bg-bg dark:bg-dark-bg-1">
-      <section>
-        <Header theme={theme} setTheme={setTheme} />
+    <div className="relative w-full h-[100vh] bg-bg dark:bg-dark-bg-1 overflow-x-hidden">
+      <Header theme={theme} setTheme={setTheme} />
+      <div className="w-full max-w-[100vw] h-[100vh] fixed top-[0px] left-[0px] z-[2] bg-ballon dark:bg-dark-ballon bg-no-repeat bg-[top_8rem_left] overflow-hidden">
+        <div className="w-full max-w-[100vw] h-[100vh] fixed top-[0px] left-[0px] z-[2] bg-cactus-pattern dark:bg-dark-cactus-pattern bg-repeat-x bg-bottom"></div>
+      </div>
+      <section className="relative z-[10]">
         {todos.todo.length > 0 ||
         todos.done.length > 0 ||
         todos.inprogress.length > 0 ? (

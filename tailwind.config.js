@@ -25,7 +25,10 @@ module.exports = {
         "dark-border-color": "#212121",
       },
       backgroundImage: {
-        "graph-pattern": "url('/assets/images/bg-pattern.svg')",
+        "cactus-pattern": "url('/src/assets/bg-cactus.svg')",
+        ballon: "url('/src/assets/ballon.svg')",
+        "dark-cactus-pattern": "url('/src/assets/dark-bg-cactus.svg')",
+        "dark-ballon": "url('/src/assets/dark-ballon.svg')",
       },
     },
     spacing: {

@@ -20,8 +20,8 @@ const Header = ({ theme, setTheme }) => {
     localStorage.theme = theme === "light" ? "dark" : "light";
   }
   return (
-    <header className="sticky w-full top-[0px] left-[0px] flex max-[380px]:flex-col  flex-row justify-between gap-[1.5rem] text-text-1 pad-d-pad z-10 bg-bg dark:bg-dark-bg-1 border-b-2 border-border-color dark:border-dark-border-color p-d-pad">
-      <div className="flex gap-[0.5rem] max-[380px]:justify-center justify-start">
+    <header className="sticky h-max w-full top-[0px] left-[0px] flex max-[450px]:flex-col  flex-row justify-between min-[450px]:items-center gap-[1.5rem] text-text-1 pad-d-pad z-[50] bg-bg dark:bg-dark-bg-1 border-b-2 border-border-color dark:border-dark-border-color p-d-pad">
+      <div className="flex gap-[0.5rem] max-[450px]:justify-center justify-start">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -42,7 +42,7 @@ const Header = ({ theme, setTheme }) => {
           ToDoWorks
         </h1>
       </div>
-      <div className="flex gap-[1rem] sm:gap-[3rem] max-[380px]:border-t-2 border-border-color dark:border-dark-border-color max-[380px]:pt-d-pad max-[380px]:justify-center justify-end pt-[0px]">
+      <div className="flex gap-[1rem] sm:gap-[3rem] max-[450px]:border-t-2 border-border-color dark:border-dark-border-color max-[450px]:pt-d-pad max-[450px]:justify-center justify-end pt-[0px]">
         {theme === "light" ? (
           <svg
             onClick={setThemeFunc}
@@ -88,7 +88,7 @@ const Header = ({ theme, setTheme }) => {
         </svg>
         <button
           onClick={showAddTaskModel}
-          className="flex gap-[10px] items-center rounded-md border-2 border-[#cb70ea] px-[0.8rem] sm:px-[1.5rem] bg-[#ecd7f3] dark:bg-transparent dark:border-purple-400 text-[#b64ed8] dark:text-purple-400 stroke-[#b64ed8] dark:stroke-purple-400 hover:bg-[#cb70ea] dark:hover:bg-purple-400 hover:text-white dark:hover:text-white hover:stroke-white dark:hover:stroke-white transition-all duration-100 ease-in-out"
+          className="flex gap-[10px] items-center rounded-md border-2 border-[#cb70ea] px-[0.8rem] sm:px-[1.5rem] py-[0.5rem] bg-[#ecd7f3] dark:bg-transparent dark:border-purple-400 text-[#b64ed8] dark:text-purple-400 stroke-[#b64ed8] dark:stroke-purple-400 hover:bg-[#cb70ea] dark:hover:bg-purple-400 hover:text-white dark:hover:text-white hover:stroke-white dark:hover:stroke-white transition-all duration-100 ease-in-out"
         >
           <svg
             className="w-[20px] h-auto  flex items-center"

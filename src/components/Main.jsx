@@ -4,7 +4,7 @@ import Task from "./Task";
 
 const Main = ({ todos, setTodos, setIsEdit }) => {
   return (
-    <main className="flex w-full justify-center p-d-pad z-30">
+    <main className="relative flex w-full justify-center p-d-pad z-10">
       <div
         id="todo-container"
         className="flex flex-col w-full p-[3rem_5%] pb-[5%] bg-bg-2 dark:bg-dark-bg-2 rounded-lg h-max max-w-[900px]"
