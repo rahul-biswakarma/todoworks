@@ -90,6 +90,7 @@ const AddTaskModel = ({ todos, setTodos, isEdit, setIsEdit }) => {
 					placeholder="Task"
 				/>
 				<input
+					data-testid="tag-input"
 					className="border-b-2 bg-bg dark:bg-dark-bg-2 border-[#000] dark:border-white/30 p-[0.5rem] focus:outline-none text-text-1 dark:text-dark-text-1"
 					type="text"
 					name="tag"
@@ -100,6 +101,7 @@ const AddTaskModel = ({ todos, setTodos, isEdit, setIsEdit }) => {
 					<label htmlFor="status">Status</label>
 					<span className="flex gap-[0.5rem]">
 						<input
+							data-testid="status-todo-radio"
 							type="radio"
 							id="todo-radio"
 							name="status"
@@ -110,6 +112,7 @@ const AddTaskModel = ({ todos, setTodos, isEdit, setIsEdit }) => {
 					</span>
 					<span className="flex gap-[0.5rem]">
 						<input
+							data-testid="status-in-progress-radio"
 							type="radio"
 							id="in-progress-radio"
 							name="status"
@@ -119,6 +122,7 @@ const AddTaskModel = ({ todos, setTodos, isEdit, setIsEdit }) => {
 					</span>
 					<span className="flex gap-[0.5rem]">
 						<input
+							data-testid="status-done-radio"
 							type="radio"
 							id="done-radio"
 							name="status"

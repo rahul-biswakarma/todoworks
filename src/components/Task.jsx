@@ -4,7 +4,6 @@ const Task = ({ todos, setTodos, todo, index, setIsEdit }) => {
 	function editTask(todoObj) {
 		document.getElementById("task-input").value = todoObj.task;
 		document.getElementById("tag-input").value = todoObj.tag;
-		console.log(todoObj.status);
 		document.getElementById(`${todoObj.status}-radio`).checked = true;
 
 		setIsEdit({ status: todo.status, index: index });
@@ -50,7 +49,14 @@ const Task = ({ todos, setTodos, todo, index, setIsEdit }) => {
 				>
 					{todo.status}
 				</div>
-				{todo.tag && <div className="task-tag">{todo.tag}</div>}
+				{todo.tag && (
+					<div
+						data-testid={`todo-tag-${index}`}
+						className="task-tag"
+					>
+						{todo.tag}
+					</div>
+				)}
 			</div>
 			<div className="icons-container">
 				<span
