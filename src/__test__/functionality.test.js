@@ -41,7 +41,7 @@ describe("Functionality Checks", () => {
 	});
 
 	it("inputs cleared after adding todo", () => {
-		const { getByText, getByTestId } = render(<App />);
+		const { getByTestId } = render(<App />);
 
 		const taskInput = getByTestId("task-input");
 		expect(taskInput).toHaveValue("");
@@ -58,7 +58,7 @@ describe("Functionality Checks", () => {
 	});
 
 	it("edit button updates the input field values", () => {
-		const { getByText, getByTestId } = render(<App />);
+		const { getByTestId } = render(<App />);
 
 		// Add a todo
 		fireEvent.click(getByTestId("add-task-button"));
@@ -76,7 +76,7 @@ describe("Functionality Checks", () => {
 	});
 
 	it("can edit a todo", () => {
-		const { getByText, getByTestId } = render(<App />);
+		const { getByTestId } = render(<App />);
 
 		// Click edit button
 		fireEvent.click(getByTestId("edit-todo-button-0"));
@@ -86,8 +86,36 @@ describe("Functionality Checks", () => {
 		fireEvent.change(getByTestId("task-input"), {
 			target: { value: "Edit Todo Test 1" },
 		});
+
+		// Click submit button
 		fireEvent.click(getByTestId("submit-button"));
 
 		expect(getByTestId("todo-title-0").textContent).toBe("Edit Todo Test 1");
+	});
+
+	it("can change todo status", () => {
+		const { getByText, getByTestId } = render(<App />);
+
+		// Click edit button
+		fireEvent.click(getByTestId("edit-todo-button-0"));
+		fireEvent.click(getByTestId("status-done-radio"));
+
+		// Click submit button
+		fireEvent.click(getByTestId("submit-button"));
+
+		expect(getByTestId("todo-status-0").textContent).toBe("done");
+	});
+
+	it("can add tags in todo", () => {
+		const { getByText, getByTestId } = render(<App />);
+
+		// Click edit button
+		fireEvent.click(getByTestId("edit-todo-button-0"));
+		fireEvent.change(getByTestId("tag-input"), { target: { value: "tag1" } });
+
+		// Click submit button
+		fireEvent.click(getByTestId("submit-button"));
+
+		expect(getByTestId("todo-tag-0").textContent).toBe("tag1");
 	});
 });
